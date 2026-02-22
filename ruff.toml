@@ -26,10 +26,18 @@ exclude = [
     "node_modules",
     "site-packages",
     "venv",
+    "notebooks/*",
+    "src/GLMCC/*",
+    "experiments/*",
 ]
 
 # Lint notebooks/ and tests/ as first-class Python sources in this repo.
-include = ["src/**/*.py", "src/**/*.pyi", "notebooks/**/*.py", "tests/**/*.py"]
+include = [
+    "src/**/*.py",
+    "src/**/*.pyi",
+    "tests/**/*.py",
+    "experiments/**/*.py",
+]
 
 line-length = 100
 indent-width = 4
@@ -62,6 +70,7 @@ ignore = [
     "W191",
     "PLR0913",
     "G004",
+    "N803",
 ]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
@@ -91,4 +100,15 @@ docstring-code-format = true
 # Ignore all directories named `tests`.
 "tests/**" = ["INP001", "S101"]
 # marimo notebooks intentionally use cell-local imports, implicit namespaces, and untyped cell fns.
-"notebooks/**" = ["ANN", "D", "ERA001", "F401", "F841", "I001", "INP001", "N803", "PLC0415", "PLR1711"]
+"notebooks/**" = [
+    "ANN",
+    "D",
+    "ERA001",
+    "F401",
+    "F841",
+    "I001",
+    "INP001",
+    "N803",
+    "PLC0415",
+    "PLR1711",
+]
