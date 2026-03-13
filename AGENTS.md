@@ -30,3 +30,16 @@ Use the minimum complexity that keeps scientific correctness auditable.
 - `tests/` stores the pytest suite.
 - `notebooks/` contains marimo notebooks.
 - `data/` is for raw data files.
+
+## Repo-local agent assets
+
+- Repo-local skills live under `.agents/my-skills`.
+- `https://github.com/shtmjp/my-skills.git` is the single source of truth.
+- In this repository, update only the `.agents/my-skills` submodule pointer. Do not edit skill contents in place.
+- For a fresh clone, initialize submodules with `git submodule update --init --recursive`.
+- To move to the latest published skills on `main`, run `git submodule update --init --remote .agents/my-skills` and commit the gitlink change.
+
+## Available repo-local skills
+
+- `joblib-numpy-rng-spawn`: Implement reproducible NumPy RNG spawning for `joblib.Parallel` pipelines. (file: `.agents/my-skills/joblib-numpy-rng-spawn/SKILL.md`)
+- `marimo-notebook-rules`: Apply repository-specific guardrails when editing marimo notebooks. (file: `.agents/my-skills/marimo-notebook-rules/SKILL.md`)

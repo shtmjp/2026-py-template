@@ -41,6 +41,6 @@
         "--dns=1.1.1.1",
         "--dns=8.8.8.8"
     ],
-    "postCreateCommand": "uv sync --dev",
+    "postCreateCommand": "git submodule update --init --recursive && uv sync --dev",
     "remoteUser": "root"
 }
